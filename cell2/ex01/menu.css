@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.menu {
+  
+}
+
+.menu:checked ~ .ul_links {
+  height: calc(100vh - 80px); /* Muestra el menú cuando el checkbox está marcado */
+}
+
+.menu:checked ~ .navbar .label_hamburguesa svg {
+  transform: rotate(90deg); /* Rota el icono cuando el checkbox está marcado */
+}
+
+.header {
+  height: 80px;
+  background-color: rgb(95, 150, 132);
+}
+
+.navbar {
+  padding-left: 35px;
+  padding-right: 35px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.list_icon {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.ul_links {
+  background-color: rgb(76, 97, 90);
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.menu
+
+.link {
+  color: white;
+  font-size: 3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+}

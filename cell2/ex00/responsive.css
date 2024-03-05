@@ -1,0 +1,15 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.left-border {
+    border-right: 1px solid gray;
+}
+.right-border {
+    border-left: 1px solid gray;
+}
