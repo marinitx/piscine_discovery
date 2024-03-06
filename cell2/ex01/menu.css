@@ -18,15 +18,11 @@ ol, ul {
 }
 
 .menu {
-  
+  display: none;
 }
 
 .menu:checked ~ .ul_links {
-  height: calc(100vh - 80px); /* Muestra el menú cuando el checkbox está marcado */
-}
-
-.menu:checked ~ .navbar .label_hamburguesa svg {
-  transform: rotate(90deg); /* Rota el icono cuando el checkbox está marcado */
+  height: calc(100vh - 80px);
 }
 
 .header {
@@ -46,7 +42,7 @@ ol, ul {
 }
 
 .list_icon {
-  color: aliceblue;
+  color: rgb(12, 102, 181);
   cursor: pointer;
 }
 
@@ -55,6 +51,7 @@ ol, ul {
   width: 100%;
   position: absolute;
   top: 80px;
+  left: 0;
   height: 0;
   overflow: hidden;
   display: flex;
@@ -63,8 +60,6 @@ ol, ul {
   align-items: center;
   gap: 3rem;
 }
-
-.menu
 
 .link {
   color: white;
