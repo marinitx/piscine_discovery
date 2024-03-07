@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #izquierda, #derecha {
+            background: none;
+            border: 3px solid orange;
+            border-radius: 25%;
+            border-style: dotted;
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #operador {
+            background: none;
+            color: orange;
+            appearance: none;
+            border: none;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: xx-large;
+            margin-left: 5rem;
+        }
+
+        #submit {
+            background-color: orange;
+            border: none;
+            padding: 1em;
+            margin-top: 1rem;
+            margin-left: 5em;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Calculator</h1>
+        <form id="calculadora">
+            <input type="text" id="izquierda" placeholder="Introduce un número" required>
+            <select id="operador" required>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="derecha" placeholder="Introduce un número" required>
+            <input type="submit" value="Try me!" id="submit">
+        </form>
+
+        <script>
+            document.getElementById('calculadora').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var izq = parseInt(document.getElementById('izquierda').value);
+                var operador = document.getElementById('operador').value;
+                var der = parseInt(document.getElementById('derecha').value);
+
+                if (isNaN(izq) || isNaN(der) || izq < 0 || der < 0) {
+                    alert('Error :(');
+                    return;
+                }
+
+                var result;
+
+                switch(operador) {
+                    case '+':
+                        result = izq + der;
+                        break;
+                    case '-':
+                        result = izq - der;
+                        break;
+                    case '*':
+                        result = izq * der;
+                        break;
+                    case '/':
+                        if (der === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        }
+                        result = izq / der;
+                        break;
+                    case '%':
+                        if (der === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        }
+                        result = izq % der;
+                        break;
+                    default:
+                        alert('Error :(');
+                        return;
+                }
+                alert('El resultado es: ' + result);
+                console.log('El resultado es: ' + result);
+            });
+
+            function alerta() {
+                alert("porfa úsame");
+            }
+            setInterval(alerta, 30000); //milisegundos
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            box-shadow: 0px 0px 18px -4px rgba(0, 0, 0, 0.581);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        body {
+            align-items: center;
+            background: #DAE2F8;
+            background: linear-gradient(
+            to right,
+            #748ed6,#a4c9d6 );
+    }
+    </style>
+</head>
+<body>
+    <div id="globito" class="balloon"></div>
+    <script>
+        var colores = ['green', 'blue', 'red'];
+        var i = 0;
+        var hinchado = 200;
+
+    document.getElementById('globito').addEventListener('click', function() {
+        this.style.backgroundColor = colores[i];
+        hinchado = hinchado + 10;
+        if (hinchado == 420)
+            hinchado = 200;
+        this.style.width = hinchado + 'px';
+        this.style.height = hinchado + 'px';
+        i = (i + 1) % colores.length; });
+
+    document.getElementById('globito').addEventListener('mouseout', function() {
+        hinchado = hinchado - 5;
+        if (hinchado < 200)
+            hinchado = 200;
+        i = (i - 1 + colores.length) % colores.length;
+        this.style.backgroundColor = colores[i];
+        this.style.width = hinchado + 'px';
+        this.style.height = hinchado + 'px';
+    })
+    </script>
+</body>
+</html>
