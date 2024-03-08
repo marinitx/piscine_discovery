@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="backgroound.css">
+    <title>BACKGROUND</title>
+</head>
+<body>
+    <div class="boton">
+        <button id="changeColorBtn">
+            Click to change color
+        </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#changeColorBtn').click(function(){
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.round(Math.random() * 15)];
+                }
+                $('body').css('background', color);
+            });
+        });
+    </script>
+</body>
+</html>

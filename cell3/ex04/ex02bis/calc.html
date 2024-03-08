@@ -73,59 +73,62 @@
             <input type="submit" value="Try me!" id="submit">
         </form>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
-            document.getElementById('calculadora').addEventListener('submit', function(event) {
-                event.preventDefault();
+            $(document).ready(function(){
+                $('#calculadora').submit(function(event){
+                    event.preventDefault();
 
-                var izq = parseInt(document.getElementById('izquierda').value);
-                var operador = document.getElementById('operador').value;
-                var der = parseInt(document.getElementById('derecha').value);
+                    var izq = parseInt($('#izquierda').val());
+                    var operador = $('#operador').val();
+                    var der = parseInt($('#derecha').val());
 
-                if (isNaN(izq) || isNaN(der) || izq < 0 || der < 0) {
-                    alert('Error :(');
-                    return;
-                }
-
-                var result;
-
-                switch(operador) {
-                    case '+':
-                        result = izq + der;
-                        break;
-                    case '-':
-                        result = izq - der;
-                        break;
-                    case '*':
-                        result = izq * der;
-                        break;
-                    case '/':
-                        if (der === 0) {
-                            alert("It's over 9000!");
-                            console.log("It's over 9000!");
-                            return;
-                        }
-                        result = izq / der;
-                        break;
-                    case '%':
-                        if (der === 0) {
-                            alert("It's over 9000!");
-                            console.log("It's over 9000!");
-                            return;
-                        }
-                        result = izq % der;
-                        break;
-                    default:
+                    if (isNaN(izq) || isNaN(der) || izq < 0 || der < 0) {
                         alert('Error :(');
                         return;
-                }
-                alert('El resultado es: ' + result);
-                console.log('El resultado es: ' + result);
-            });
+                    }
 
-            function alerta() {
-                alert("porfa úsame");
-            }
-            setInterval(alerta, 30000); //milisegundos
+                    var result;
+
+                    switch(operador) {
+                        case '+':
+                            result = izq + der;
+                            break;
+                        case '-':
+                            result = izq - der;
+                            break;
+                        case '*':
+                            result = izq * der;
+                            break;
+                        case '/':
+                            if (der === 0) {
+                                alert("It's over 9000!");
+                                console.log("It's over 9000!");
+                                return;
+                            }
+                            result = izq / der;
+                            break;
+                        case '%':
+                            if (der === 0) {
+                                alert("It's over 9000!");
+                                console.log("It's over 9000!");
+                                return;
+                            }
+                            result = izq % der;
+                            break;
+                        default:
+                            alert('Error :(');
+                            return;
+                    }
+                    alert('El resultado es: ' + result);
+                    console.log('El resultado es: ' + result);
+                });
+
+                function alerta() {
+                    alert("porfa úsame");
+                }
+                setInterval(alerta, 30000); //milisegundos
+            });
         </script>
     </div>
 </body>
